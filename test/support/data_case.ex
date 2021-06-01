@@ -31,10 +31,10 @@ defmodule Bank.DataCase do
   end
 
   setup tags do
-    :ok = SQL.Sandbox.checkout(Repo)
+    :ok = Sandbox.checkout(Repo)
 
     unless tags[:async] do
-      SQL.Sandbox.mode(Repo, {:shared, self()})
+      Sandbox.mode(Repo, {:shared, self()})
     end
 
     :ok
