@@ -1,11 +1,11 @@
 use Mix.Config
 
 # Configure your database
-config :bank_web, BankWeb.Repo,
-  username: System.get_env("DB_USER"),
-  password: System.get_env("DB_PWD"),
-  database: "bank_web_dev",
-  hostname: System.get_env("DB_HOST"),
+config :bank, Bank.Repo,
+username: System.get_env("DB_USERNAME"),
+password: System.get_env("DB_PASSWORD"),
+database: "bank_dev",
+hostname: System.get_env("DB_HOST"),
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
@@ -15,7 +15,7 @@ config :bank_web, BankWeb.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
-config :bank_web, BankWebWeb.Endpoint,
+config :bank, BankWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
@@ -55,13 +55,13 @@ config :bank_web, BankWebWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :bank_web, BankWebWeb.Endpoint,
+config :bank, BankWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/bank_web_web/(live|views)/.*(ex)$",
-      ~r"lib/bank_web_web/templates/.*(eex)$"
+      ~r"lib/bank_web/(live|views)/.*(ex)$",
+      ~r"lib/bank_web/templates/.*(eex)$"
     ]
   ]
 

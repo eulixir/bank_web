@@ -1,4 +1,4 @@
-defmodule BankWebWeb.ChannelCase do
+defmodule BankWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -11,7 +11,7 @@ defmodule BankWebWeb.ChannelCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use BankWebWeb.ChannelCase, async: true`, although
+  by setting `use BankWeb.ChannelCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -21,18 +21,18 @@ defmodule BankWebWeb.ChannelCase do
     quote do
       # Import conveniences for testing with channels
       import Phoenix.ChannelTest
-      import BankWebWeb.ChannelCase
+      import BankWeb.ChannelCase
 
       # The default endpoint for testing
-      @endpoint BankWebWeb.Endpoint
+      @endpoint BankWeb.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(BankWeb.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Bank.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(BankWeb.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Bank.Repo, {:shared, self()})
     end
 
     :ok

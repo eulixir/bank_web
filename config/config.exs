@@ -7,16 +7,16 @@
 # General application configuration
 use Mix.Config
 
-config :bank_web,
-  ecto_repos: [BankWeb.Repo]
+config :bank,
+  ecto_repos: [Bank.Repo]
 
 # Configures the endpoint
-config :bank_web, BankWebWeb.Endpoint,
+config :bank, BankWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "ECDt9Xv88Nb3fw6CYt9oyV2DaIcZD3a0ikkjN/8fHb2sopFYWfoKUwW5ZaSoUEiA",
-  render_errors: [view: BankWebWeb.ErrorView, accepts: ~w(html json), layout: false],
-  pubsub_server: BankWeb.PubSub,
-  live_view: [signing_salt: "CogX6cZa"]
+  secret_key_base: "HxtzOmq615GCixTslxfu9PUeTPsynR8g181tf0ZOwD1COUJeUsiJBji2b19A3sre",
+  render_errors: [view: BankWeb.ErrorView, accepts: ~w(html json), layout: false],
+  pubsub_server: Bank.PubSub,
+  live_view: [signing_salt: "H8D6UAd6"]
 
 # Configures Elixir's Logger
 config :logger, :console,
