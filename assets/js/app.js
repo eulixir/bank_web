@@ -21,5 +21,5 @@ document.addEventListener('DOMContentLoaded', function () {
   M.Sidenav.init(elems, {});
 
   var elems = document.querySelectorAll('select');
-  M.Sidenav.init(elems, {});
+  M.FormSelect.init(elems, {});
 });

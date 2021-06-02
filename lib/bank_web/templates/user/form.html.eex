@@ -43,7 +43,8 @@
     </div>
 
     <div>
-      <%= submit "Save" %>
+      <%= submit "Save",
+       class: "btn blue waves-effect waves-light" %>
     </div>
   <% end %>
 </div>
