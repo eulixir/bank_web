@@ -20,7 +20,6 @@ defmodule BankWeb.ChannelCase do
 
   alias Bank.Repo
 
-
   using do
     quote do
       # Import conveniences for testing with channels

@@ -36,10 +36,10 @@ defmodule BankWeb.ConnCase do
   end
 
   setup tags do
-    :ok =Sandbox.checkout(Bank.Repo)
+    :ok = Sandbox.checkout(Bank.Repo)
 
     unless tags[:async] do
-     Sandbox.mode(Repo, {:shared, self()})
+      Sandbox.mode(Repo, {:shared, self()})
     end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}
