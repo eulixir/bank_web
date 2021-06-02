@@ -5,8 +5,6 @@ defmodule Bank.Accounts.User do
   @primary_key {:id, :binary_id, autogenerate: true}
   @derive {Phoenix.Param, key: :id}
 
-  @required_params [:email, :first_name, :last_name, :password_confirmation, :password, :role]
-
   schema "users" do
     field :email, :string
     field :first_name, :string

@@ -18,11 +18,6 @@
   </li>
 
   <li>
-    <strong>Password hash:</strong>
-    <%= @user.password_hash %>
-  </li>
-
-  <li>
     <strong>Role:</strong>
     <%= @user.role %>
   </li>

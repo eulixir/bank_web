@@ -1,35 +1,49 @@
-<%= form_for @changeset, @action, fn f -> %>
-  <%= if @changeset.action do %>
-    <div class="alert alert-danger">
-      <p>Oops, something went wrong! Please check the errors below.</p>
+<div class="row">
+  <%= form_for @changeset, @action, fn f -> %>
+    <%= if @changeset.action do %>
+      <div class="alert alert-danger">
+        <p>Oops, something went wrong! Please check the errors below.</p>
+      </div>
+    <% end %>
+
+    <div class="row">
+      <%= label f, :email, for: "email" %>
+      <%= email_input f, :email, id: "email", class: "validate" %>
+      <span class="helper-text" data-error="wrong" data-success="right"><%= error_tag f, :email %></span>
+    </div>
+
+    <div class="row">
+      <%= label f, :first_name, for: "first_name" %>
+      <%= text_input f, :first_name, id: "first_name", class: "validate" %>
+      <span class="helper-text" data-error="wrong" data-success="right"><%= error_tag f, :first_name %></span>
+    </div>
+
+    <div class="row">
+      <%= label f, :last_name, for: "last_name" %>
+        <%= text_input f, :last_name, id: "last_name", class: "validate" %>
+      <span class="helper-text" data-error="wrong" data-success="right"><%= error_tag f, :last_name %></span>
+    </div>
+
+    <div class="row">
+      <%= label f, :password, for: "password" %>
+      <%= password_input f, :password, id: "password", class: "validate" %>
+      <span class="helper-text" data-error="wrong" data-success="right"><%= error_tag f, :password %></span>
+    </div>
+
+    <div class="row">
+      <%= label f, :password_confirmation, for: "password_confirmation" %>
+      <%= password_input f,  :password_confirmation, id: "password_confirmation", class: "validate" %>
+      <span class="helper-text" data-error="wrong" data-success="right"><%= error_tag f, :password_confirmation %></span>
+    </div>
+
+    <div class="row">
+      <%= label f, :role, for: "role" %>
+      <%= select f,  :role, ["user", "admin"], id: "role", class: "validate" %>
+      <span class="helper-text" data-error="wrong" data-success="right"><%= error_tag f, :role %></span>
+    </div>
+
+    <div>
+      <%= submit "Save" %>
     </div>
   <% end %>
-
-  <%= label f, :email %>
-  <%= text_input f, :email %>
-  <%= error_tag f, :email %>
-
-  <%= label f, :first_name %>
-  <%= text_input f, :first_name %>
-  <%= error_tag f, :first_name %>
-
-  <%= label f, :last_name %>
-  <%= text_input f, :last_name %>
-  <%= error_tag f, :last_name %>
-
-  <%= label f, :password %>
-  <%= text_input f, :password %>
-  <%= error_tag f, :password %>
-
-  <%= label f, :password_confirmation %>
-  <%= text_input f, :password_confirmation %>
-  <%= error_tag f, :password_confirmation %>
-
-  <%= label f, :role %>
-  <%= text_input f, :role %>
-  <%= error_tag f, :role %>
-
-  <div>
-    <%= submit "Save" %>
-  </div>
-<% end %>
+</div>
